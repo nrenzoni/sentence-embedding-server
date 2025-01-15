@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package embedding;
+
+message EmbeddingRequest {
+    bytes embeddingsListBinary = 1;
+}
+
+message EmbeddingResponse {
+    bytes embeddingsListBinary = 1;
+}
+
+service EmbeddingService {
+    rpc CalculateEmbeddings (EmbeddingRequest) returns (EmbeddingResponse);
+    rpc Echo (EmbeddingRequest) returns (EmbeddingRequest);
+}
